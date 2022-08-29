@@ -31,7 +31,7 @@ Route::get('/logout', [loginController::class, 'logout']);
 
 //Koleksi
 Route::get('/koleksi-admin', [KoleksiController::class, 'index']);
-Route::get('/koleksi-admin/store', [KoleksiController::class, 'store']);
+Route::post('/koleksi-admin/store', [KoleksiController::class, 'store']);
 
 //Antopometri
 Route::get('/antropometri-admin', [AntropometriController::class, 'index']);

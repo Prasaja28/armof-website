@@ -19,7 +19,7 @@ class CreateKoleksi extends Migration
             $table->unsignedBigInteger('furniture_id');
             $table->unsignedBigInteger('fungsi_id');
             $table->string('foto');
-            $table->boolean('gender');
+            $table->string('gender', 10);
             $table->string('age_min', 2);
             $table->string('age_max', 2);
             $table->integer('height');

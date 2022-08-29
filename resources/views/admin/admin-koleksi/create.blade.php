@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <form action="{{ url('/koleksi-admin/store') }}" method="post" enctype="multipart/form-data">
-                    @csrf
+                    {{csrf_field()}}
                     <div class="form-group">
                         <label for="nama_koleksi">Nama Furniture :</label>
                         <input type="text" class="form-control form-control-border @error('nama_koleksi') is-invalid @enderror" id="nama_koleksi" placeholder="Masukkan Nama Koleksi" name="nama_koleksi" value="{{ old('nama_koleksi') }}" required>
@@ -38,7 +38,7 @@
                         <select class="form-control dynamic" name="fungsi_id" id="fungsi_id" required="">
                             <option selected="selected" selected disabled>Pilih Kategori Fungsi</option>
                             @foreach ($fungsiKol as $data)
-                            <option value="{{ $data->id }}">{{ $data->nama_kategori_furniture }}</option>
+                            <option value="{{ $data->id }}">{{ $data->nama_kategori_fungsi }}</option>
                             @endforeach
                         </select>
                         @error('fungsi_id')
@@ -58,7 +58,7 @@
                     </div>
                     <div class="form-group">
                         <label for="age_max">Umur maximum :</label>
-                        <input type="number" class="form-control form-control-border @error('age_max') is-invalid @enderror" id="age_max" placeholder="Masukkan Umur Minimum" name="age_max" value="{{ old('age_max') }}" min="1" required>
+                        <input type="number" class="form-control form-control-border @error('age_max') is-invalid @enderror" id="age_max" placeholder="Masukkan Umur Maximum" name="age_max" value="{{ old('age_max') }}" min="1" required>
                         @error('age_max')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -66,16 +66,25 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="age_max">Masukkan Tinggi :</label>
-                        <input type="number" class="form-control form-control-border @error('age_max') is-invalid @enderror" id="age_max" placeholder="Masukkan Umur Minimum" name="age_max" value="{{ old('age_max') }}" min="1" required>
-                        @error('age_max')
+                        <label for="height">Masukkan Tinggi Badan Rekomedasi :</label>
+                        <input type="number" class="form-control form-control-border @error('height') is-invalid @enderror" id="height" placeholder="Masukkan Tinggi Badan (CM)" name="height" value="{{ old('height') }}" min="1" required>
+                        @error('height')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="furniture_id">Jenis Kelamin :</label>
+                        <label for="weight">Masukkan Berat Badan Rekomedasi :</label>
+                        <input type="number" class="form-control form-control-border @error('weight') is-invalid @enderror" id="weight" placeholder="Masukkan Berat Badan (KG)" name="weight" value="{{ old('weight') }}" min="1" required>
+                        @error('weight')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Jenis Kelamin :</label>
                         <select class="form-control select2 select2-danger mob" id="gender" name="gender" value="{{ old('gender') }}" data-dropdown-css-class="select2-danger">
                             <option selected="selected" selected disabled>
                                 Pilih Jenis Kelamin
@@ -97,6 +106,22 @@
                             @endif
                         </select>
                     </div>
+                    <div class="form-group">
+                        <div class="input-group control-group increment">
+                            <input type="file" name="foto[]" class="form-control">
+                            <div class="input-group-btn">
+                                <button class="btn btn-success zz" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
+                            </div>
+                        </div>
+                        <div class="clone hide">
+                            <div class="control-group input-group" style="margin-top:10px">
+                                <input type="file" name="foto[]" class="form-control">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <button type="submit" class="btn btn-primary">Simpan</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -107,3 +132,16 @@
         </div>
     </div>
 </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".zz").click(function() {
+            var html = $(".clone").html();
+            $(".increment").after(html);
+        });
+        $("body").on("click", ".btn-danger", function() {
+            $(this).parents(".control-group").remove();
+        });
+    });
+</script>

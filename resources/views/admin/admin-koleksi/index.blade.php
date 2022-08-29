@@ -49,7 +49,18 @@
                                     @forelse ($koleksi as $data)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
+                                        <td>{{$data->nama_koleksi}}</td>
+                                        <td> @foreach (json_decode($data->foto) as $picture)
+                                            <img src="{{ asset('/img/koleksi-img/'.$picture) }}" style="height:120px; width:200px" />
+                                            @endforeach
+                                        </td>
                                         <td>{{$data->furniture_name}}</td>
+                                        <td>{{$data->fungsi_name}}</td>
+                                        <td>{{$data->gender}}</td>
+                                        <td>{{$data->age_min}}</td>
+                                        <td>{{$data->age_max}}</td>
+                                        <td>{{$data->height}}</td>
+                                        <td>{{$data->weight}}</td>
                                         <td class="text-center">
                                             <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#deleteDesk{{$data->id}}"><i class="fas fa-trash-alt"></i></i></button>
                                         </td>
