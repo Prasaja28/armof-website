@@ -11,7 +11,7 @@
             </div>
             <div class="modal-body">
 
-                <h3>Apakah Anda yakin untuk Menghapus ?</h3>
+                <h3>Apakah Anda yakin untuk Menghapus {{$users->name}} ?</h3>
 
             </div>
             <div class="modal-footer">

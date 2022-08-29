@@ -51,7 +51,7 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$data->nama_koleksi}}</td>
                                         <td> @foreach (json_decode($data->foto) as $picture)
-                                            <img src="{{ asset('/img/koleksi-img/'.$picture) }}" style="height:120px; width:200px" />
+                                            <img src="{{ asset('/img/koleksi-img/'.$picture) }}" style="height:80px; width:120px" /><br><br>
                                             @endforeach
                                         </td>
                                         <td>{{$data->furniture_name}}</td>
@@ -62,7 +62,8 @@
                                         <td>{{$data->height}}</td>
                                         <td>{{$data->weight}}</td>
                                         <td class="text-center">
-                                            <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#deleteDesk{{$data->id}}"><i class="fas fa-trash-alt"></i></i></button>
+                                            <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$data->id}}"><i class="fas fa-trash-alt"></i></i></button><br><br>
+                                            <button class="btn btn-success" alt="Edit" data-toggle="modal" data-target="#edit{{$data->id}}"><i class="fas fa-pen-square"></i></button>
                                         </td>
                                     <tr>
                                         @empty
@@ -81,6 +82,7 @@
     </div>
 </div>
 @include('admin.admin-koleksi.create')
+@include('admin.admin-koleksi.delete')
 @endsection
 
 @section('script')

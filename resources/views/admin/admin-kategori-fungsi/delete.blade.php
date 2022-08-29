@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h3>Apakah Anda yakin untuk Menghapus ?</h3>
+                <h3>Apakah Anda yakin untuk Menghapus {{$data->nama_kategori_fungsi}} ?</h3>
             </div>
             <div class="modal-footer">
                 <a href="{{ url('/kategori-fungsi/delete/'.$data->id)}}" class="btn btn-danger">Delete</a>

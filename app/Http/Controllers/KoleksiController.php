@@ -23,7 +23,6 @@ class KoleksiController extends Controller
         $furnitureKol = DB::table('Kategori_furniture')->orderBy('nama_kategori_furniture', 'asc')->get();
         $fungsiKol = DB::table('Kategori_fungsi')->orderBy('nama_kategori_fungsi', 'asc')->get();
         return view('admin.admin-koleksi.index', compact('koleksi', 'furnitureKol', 'fungsiKol'));
-        // return json_decode($koleksi[1]->foto);
     }
 
     public function store(Request $request)
@@ -51,48 +50,22 @@ class KoleksiController extends Controller
         return redirect('/koleksi-admin')->with('Data Berhasil Di Simpan!!!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $data = Koleksi::find($id);
+        $image_path = public_path() .  $data->foto;
+        unlink($image_path);
+        $data->delete();
+        return redirect('/koleksi-admin');
     }
 }
