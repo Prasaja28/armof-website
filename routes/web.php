@@ -29,6 +29,15 @@ use App\Http\Controllers\UsersController;
 Route::get('/', function () {
     return view('users.pages.home');
 });
+Route::get('/antropometri', function () {
+    return view('users.pages.antropometri');
+});
+Route::get('/koleksi', function () {
+    return view('users.pages.koleksi');
+});
+Route::get('/rekomendasi', function () {
+    return view('users.pages.rekomendasi');
+});
 
 // ADMIN ********************************************
 

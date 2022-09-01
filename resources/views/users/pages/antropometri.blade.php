@@ -1,5 +1,5 @@
 @extends('users.components.master')
-@section('title', 'Selamat datang di Armof!')
+@section('title', 'Antropometri')
 @section('content')
 <div class="container">
     <div class="row">
