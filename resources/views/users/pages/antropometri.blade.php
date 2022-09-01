@@ -10,9 +10,9 @@
               <h1 class="fw-bolder text-uppercase text-color-primary mb-3">pengukuran antropometri</h1>
             </div>
             <div class="antropometri">
-              <img src="src/img/antro-1.png" />
-              <img src="src/img/antro-2.png" />
-              <img src="src/img/antro-3.png" />
+              <img src="assets/images/antro-1.png" />
+              <img src="assets/images/antro-2.png" />
+              <img src="assets/images/antro-3.png" />
             </div>
           </div>
         </div>
