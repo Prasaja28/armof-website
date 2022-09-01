@@ -38,6 +38,24 @@ Route::get('/koleksi', function () {
 Route::get('/rekomendasi', function () {
     return view('users.pages.rekomendasi');
 });
+Route::get('/usia', function () {
+    return view('users.pages.usia');
+});
+Route::get('/tinggi-berat', function () {
+    return view('users.pages.tinggi-berat');
+});
+Route::get('/tentang-kami', function () {
+    return view('users.pages.tentang-kami');
+});
+Route::get('/detail', function () {
+    return view('users.pages.detail');
+});
+Route::get('/fungsi', function () {
+    return view('users.pages.fungsi');
+});
+Route::get('/furnitures', function () {
+    return view('users.pages.furnitures');
+});
 
 // ADMIN ********************************************
 
