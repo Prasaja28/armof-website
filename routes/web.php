@@ -20,9 +20,17 @@ use App\Http\Controllers\UsersController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('admin.dashboard');
+// });
+
+// USERS *******************************************
+
 Route::get('/', function () {
-    return view('admin.dashboard');
+    return view('users.pages.home');
 });
+
+// ADMIN ********************************************
 
 //login
 Route::get('/login', [LoginController::class, 'index']);

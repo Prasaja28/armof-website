@@ -1,0 +1,217 @@
+/* IMPORT */
+@import url('http://fonts.cdnfonts.com/css/bahnschrift');
+
+/* GLOBAL */
+:root {
+  --primary: #ff6600;
+  --secondary: #192e35;
+}
+
+body {
+  font-family: 'Bahnschrift', sans-serif;
+  text-align: justify;
+}
+
+h1 {
+  text-align: center;
+}
+
+.text-color-primary {
+  color: var(--primary);
+}
+
+.text-color-secondary {
+  color: var(--secondary);
+}
+
+.bg-color-primary {
+  background-color: var(--primary);
+}
+
+.bg-color-secondary {
+  background-color: var(--secondary);
+}
+
+.border-color-primary {
+  border: 3px solid var(--primary);
+}
+
+.logo-header {
+  height: 60px;
+  width: auto;
+}
+
+/* FURNITURE */
+.ganti-model-primary {
+  color: white;
+  background-color: var(--secondary);
+}
+
+.ganti-model-secondary {
+  color: var(--secondary) !important;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.garis-primary {
+  background-color: #00000;
+}
+
+.garis-secondary {
+  background-color: #00000;
+}
+
+div.bentuk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  color: white;
+  font-weight: 800;
+  font-size: 24px;
+  /* background-color: var(--secondary); */
+}
+
+div.bentuk-dasar::before {
+  color: var(--secondary);
+  position: absolute;
+  display: block;
+  margin-top: 80px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+div.bentuk-satu::before {
+  content: 'FURNITURE';
+}
+
+div.bentuk-dua::before {
+  content: 'FUNGSI';
+}
+
+div.bentuk-tiga::before {
+  content: 'USIA';
+}
+
+div.bentuk-empat::before {
+  content: 'TINGGI & BERAT';
+}
+
+.satu::after {
+  content: '1';
+}
+
+.satu::before {
+  content: 'FURNITURE';
+}
+
+.dua::after {
+  content: '2';
+}
+.tiga::after {
+  content: '3';
+}
+.empat::after {
+  content: '4';
+}
+
+.garis {
+  height: 20px;
+  margin-right: -10px;
+}
+
+.garis-satu {
+  width: 80px;
+}
+
+.garis-dua {
+  width: 140px;
+  margin-left: -10px;
+}
+
+.garis-tiga {
+  width: 140px;
+  margin-left: -10px;
+}
+
+.garis-empat {
+  width: 140px;
+  margin-left: -10px;
+}
+
+.garis-lima {
+  width: 80px;
+  margin-left: -10px;
+}
+
+.mask::after {
+  content: '';
+  width: 150px;
+  height: 150px;
+  display: block;
+  position: absolute;
+  top: 30%;
+  right: 28%;
+  background-image: url('../img/checklist.png');
+  background-repeat: no-repeat;
+}
+
+.form-search i {
+  display: block;
+  margin-left: -30px;
+}
+
+/* ANTRO */
+.antropometri img {
+  width: 100%;
+  height: auto;
+}
+
+/* TENTANG */
+.logo-tentang {
+  height: 100px;
+}
+
+/* FOOTER */
+.container-footer {
+  margin-top: 50px;
+}
+
+footer {
+  border-bottom: 70px solid var(--secondary);
+  border-right: 100px solid transparent;
+  border-left: 100px solid transparent;
+}
+
+.copyright::after {
+  content: 'Copyright 2022';
+  display: block;
+  position: absolute;
+  margin-left: -50px;
+  line-height: 60px;
+}
+
+/* PC */
+@media (min-width: 768px) {
+  h1 {
+    text-align: left;
+  }
+
+  .logo-header {
+    height: 80px;
+    width: auto;
+  }
+
+  .masuk {
+    display: block;
+    margin-right: 150px;
+  }
+
+  .garis-secondary {
+    background-color: var(--secondary);
+  }
+
+  .logo-tentang {
+    height: 150px;
+  }
+}
