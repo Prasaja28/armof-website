@@ -13,7 +13,7 @@
                         Menu
                     </li>
                     <li class="nav-item {{ (request()->is('*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="/"><i class="fas fa-home"></i>Dashboard</a>
+                        <a class="nav-link" href="/dashboard-admin"><i class="fas fa-home"></i>Dashboard</a>
                     </li>
                     <li class="nav-item {{ (request()->is('lokasi*')) ? 'active' : '' }}">
                         <a class="nav-link" href="/koleksi-admin"><i class="fas fa-bookmark"></i>Koleksi</a>
