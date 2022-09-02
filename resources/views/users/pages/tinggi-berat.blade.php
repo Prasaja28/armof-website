@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
       <div class="col col-12">
-        <div class="card my-4 py-3 px-3 px-md-5">
+        <div class="card mt-4 py-3 px-3 px-md-5">
           <div class="card-body">
             <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
               <a href="usia.html" class="bg-color-primary text-uppercase text-decoration-none fw-bold text-center text-white py-2 px-4 rounded-pill fs-5 flex-fill me-0 me-md-4">sebelumnya</a>
@@ -44,6 +44,11 @@
                 <input type="number" class="form-control" />
                 <label class="text-uppercase text-color-primary fw-bold mt-3 mt-md-3">berat</label>
                 <input type="number" class="form-control" />
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col-12">
+                <img src="assets/images/logo.PNG" alt="armof" height="50" class="mt-5 mb-3" />
               </div>
             </div>
           </div>

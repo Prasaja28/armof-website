@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
       <div class="col col-12">
-        <div class="card my-4 py-3 px-3 px-md-5">
+        <div class="card mt-4 py-3 px-3 px-md-5">
           <div class="card-body">
             <div class="row mt-2 justify-content-center">
               <div class="col-4 d-flex justify-content-center align-items-center">
@@ -26,6 +26,11 @@
                   <a href="detail.html" class="text-uppercase bg-color-primary py-2 px-4 text-decoration-none text-white fw-semibold">view ar</a>
                   <a href="detail.html" class="text-uppercase bg-color-primary py-2 px-4 text-decoration-none text-white fw-semibold ms-3">download</a>
                 </div>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col-12">
+                <img src="assets/images/logo.PNG" alt="armof" height="50" class="mt-5 mb-3" />
               </div>
             </div>
           </div>

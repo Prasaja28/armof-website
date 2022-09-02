@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
       <div class="col col-12">
-        <div class="card my-4 py-3 px-3 px-md-5">
+        <div class="card mt-4 py-3 px-3 px-md-5">
           <div class="card-body">
             <h1 class="text-uppercase text-color-primary mb-5 fw-bold">selamat datang di website armof</h1>
             <p class="fs-4">
@@ -18,6 +18,12 @@
             <div class="row justify-content-center">
               <div class="col-8 col-md-3">
                 <a href="furniture.html" class="bg-color-primary text-uppercase text-decoration-none fw-bold text-center text-white mt-5 mb-3 m-auto d-block py-3 fs-5">mulai sekarang</a>
+              </div>
+            </div>
+
+            <div class="row text-center">
+              <div class="col-12">
+                <img src="assets/images/logo.PNG" alt="armof" height="50" class="mt-5 mb-3" />
               </div>
             </div>
           </div>

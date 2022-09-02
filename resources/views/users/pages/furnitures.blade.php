@@ -1,10 +1,10 @@
 @extends('users.components.master')
-@section('title', 'Fungsi')
+@section('title', 'Furnitures')
 @section('content')
 <div class="container">
     <div class="row">
       <div class="col col-12">
-        <div class="card my-4 py-3 px-3 px-md-5">
+        <div class="card mt-4 py-3 px-3 px-md-5">
           <div class="card-body">
             <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
               <a href="home.html" class="bg-color-primary text-uppercase text-decoration-none fw-bold text-center text-white py-2 px-4 rounded-pill fs-5 flex-fill me-0 me-md-4">sebelumnya</a>
@@ -61,6 +61,11 @@
                   </div>
                 </a>
                 <h1 class="fs-3 mt-3 mb-5 mb-md-0 fw-bold text-uppercase text-color-primary text-center">kursi</h1>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col-12">
+                <img src="assets/images/logo.PNG" alt="armof" height="50" class="mt-5 mb-3" />
               </div>
             </div>
           </div>

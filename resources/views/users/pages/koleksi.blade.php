@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
       <div class="col col-12">
-        <div class="card my-4 py-3 px-3 px-md-3">
+        <div class="card mt-4 py-3 px-3 px-md-3">
           <div class="card-body">
             <div class="row mt-2 mb-3 mb-md-6">
               <div class="col-12 col-md-4">
@@ -89,6 +89,11 @@
                     <a href="detail.html" class="text-uppercase bg-color-primary py-1 px-5 text-decoration-none text-white fw-semibold">detail</a>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col-12">
+                <img src="assets/images/logo.PNG" alt="armof" height="50" class="mt-5 mb-3" />
               </div>
             </div>
           </div>

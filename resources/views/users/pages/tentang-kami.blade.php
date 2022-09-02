@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
       <div class="col col-12">
-        <div class="card my-4 py-3 px-3 px-md-5">
+        <div class="card mt-4 py-3 px-3 px-md-5">
           <div class="card-body">
             <h1 class="text-uppercase text-color-primary mb-5 fw-bold">tentang perusahaan</h1>
             <p class="fs-4">
@@ -21,6 +21,11 @@
             <div class="d-flex align-items-end">
               <img src="assets/images/instagram.png" height="35" />
               <h1 class="fs-5 text-color-primary ms-3">@armof.id</h1>
+            </div>
+            <div class="row text-center">
+              <div class="col-12">
+                <img src="assets/images/logo.PNG" alt="armof" height="50" class="mt-5 mb-3" />
+              </div>
             </div>
           </div>
         </div>
