@@ -28,7 +28,7 @@ class LoginController extends Controller
                 Session::put('user_id', $user->id);
                 Session::put('email', $user->email);
                 Session::put('/login', TRUE);
-                return redirect('/');
+                return redirect('/dashboard-admin');
             }
         }
 
