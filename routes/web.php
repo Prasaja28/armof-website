@@ -67,6 +67,7 @@ Route::get('/logout', [loginController::class, 'logout']);
 //Koleksi
 Route::get('/koleksi-admin', [KoleksiController::class, 'index']);
 Route::post('/koleksi-admin/store', [KoleksiController::class, 'store']);
+Route::post('/koleksi-admin/update-koleksi/{id}', [KoleksiController::class, 'update']);
 Route::get('/koleksi-admin/delete-koleksi/{id}', [KoleksiController::class, 'destroy']);
 
 //Antopometri

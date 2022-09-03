@@ -49,7 +49,7 @@
                     </div>
                     <div class="form-group">
                         <label for="age_min">Umur minimum :</label>
-                        <input type="number" class="form-control form-control-border @error('age_min') is-invalid @enderror" id="age_min" placeholder="Masukkan Umur Minimum" name="age_min" value="{{ old('age_min') }}" min="1" required>
+                        <input type="number" class="form-control form-control-border @error('age_min') is-invalid @enderror" id="age_min" placeholder="Masukkan Umur Minimum" name="age_min" value="{{ old('age_min') }}" min="1" max="99" required>
                         @error('age_min')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -58,7 +58,7 @@
                     </div>
                     <div class="form-group">
                         <label for="age_max">Umur maximum :</label>
-                        <input type="number" class="form-control form-control-border @error('age_max') is-invalid @enderror" id="age_max" placeholder="Masukkan Umur Maximum" name="age_max" value="{{ old('age_max') }}" min="1" required>
+                        <input type="number" class="form-control form-control-border @error('age_max') is-invalid @enderror" id="age_max" placeholder="Masukkan Umur Maximum" name="age_max" value="{{ old('age_max') }}" min="1" max="99" required>
                         @error('age_max')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -144,4 +144,34 @@
             $(this).parents(".control-group").remove();
         });
     });
+</script>
+<script>
+    function textLength(value) {
+        var maxLength = 2;
+        if (value.length > maxLength) return false;
+        return true;
+    }
+    var oldValue = '';
+    var alert = document.getElementById('alert');
+    document.getElementById('age_min').onkeyup = function() {
+        if (!textLength(this.value)) {
+            this.value = oldValue;
+            alert.innerHTML = 'Text is too long!'
+        } else oldValue = this.value;
+    }
+</script>
+<script>
+    function textLength(value) {
+        var maxLength = 2;
+        if (value.length > maxLength) return false;
+        return true;
+    }
+    var oldValue = '';
+    var alert = document.getElementById('alert');
+    document.getElementById('age_max').onkeyup = function() {
+        if (!textLength(this.value)) {
+            this.value = oldValue;
+            alert.innerHTML = 'Text is too long!'
+        } else oldValue = this.value;
+    }
 </script>

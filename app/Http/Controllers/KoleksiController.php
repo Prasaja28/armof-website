@@ -15,6 +15,8 @@ class KoleksiController extends Controller
             'koleksi.*',
             'Kategori_furniture.nama_kategori_furniture as furniture_name',
             'Kategori_fungsi.nama_kategori_fungsi as fungsi_name',
+            'Kategori_furniture.id as furniture_id',
+            'Kategori_fungsi.id as fungsi_id',
         )
             ->leftjoin('Kategori_furniture', 'koleksi.furniture_id', '=', 'Kategori_furniture.id')
             ->leftjoin('Kategori_fungsi', 'koleksi.fungsi_id', '=', 'Kategori_fungsi.id')
@@ -50,14 +52,32 @@ class KoleksiController extends Controller
         return redirect('/koleksi-admin')->with('Data Berhasil Di Simpan!!!');
     }
 
-    public function edit($id)
-    {
-        //
-    }
-
     public function update(Request $request, $id)
     {
-        //
+        $data = [];
+        if ($request->hasfile('foto')) {
+            foreach ($request->file('foto') as $image) {
+                $name = $image->getClientOriginalName();
+                $image->move(public_path() . '/img/koleksi-img/', $name);
+                $data[] = $name;
+            }
+        } else {
+            $data = $request->foto2;
+        }
+
+        Koleksi::where('id', $id)
+            ->update([
+                'nama_koleksi' => $request->nama_koleksi,
+                'furniture_id' => $request->furniture_id,
+                'fungsi_id' => $request->fungsi_id,
+                'foto' => json_encode($data),
+                'gender' => $request->gender,
+                'age_min' => $request->age_min,
+                'age_max' => $request->age_max,
+                'height' => $request->height,
+                'weight' => $request->weight,
+            ]);
+        return redirect('/koleksi-admin')->with('Data Berhasil Di di update!!!');
     }
 
     public function destroy($id)

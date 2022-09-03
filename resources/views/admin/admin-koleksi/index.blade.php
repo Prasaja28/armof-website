@@ -82,6 +82,7 @@
     </div>
 </div>
 @include('admin.admin-koleksi.create')
+@include('admin.admin-koleksi.update')
 @include('admin.admin-koleksi.delete')
 @endsection
 
