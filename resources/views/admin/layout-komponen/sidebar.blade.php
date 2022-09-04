@@ -18,9 +18,6 @@
                     <li class="nav-item {{ (request()->is('lokasi*')) ? 'active' : '' }}">
                         <a class="nav-link" href="/koleksi-admin"><i class="fas fa-bookmark"></i>Koleksi</a>
                     </li>
-                    <li class="nav-item {{ (request()->is('antropometri*')) ? 'active' : '' }}">
-                        <a class="nav-link" href="/antropometri-admin"><i class="fas fa-folder"></i>Antropometri</a>
-                    </li>
                     <li class="nav-item {{ (request()->is('admin-profil*')) ? 'active' : '' }}">
                         <a class="nav-link" href="/admin-profil"><i class="fas fa-warehouse"></i>Profil Perusahaan</a>
                     </li>

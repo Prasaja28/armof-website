@@ -10,7 +10,7 @@ class Koleksi extends Model
     use HasFactory;
     protected $table = 'koleksi';
     protected $primaryKey = 'id';
-    protected $fillable = ['nama_koleksi', 'furniture_id', 'fungsi_id', 'foto', 'gender', 'age_min', 'age_max', 'height', 'weight'];
+    protected $fillable = ['nama_koleksi', 'furniture_id', 'fungsi_id', 'foto', 'gender', 'age_min', 'age_max', 'deskripsi', 'height', 'weight'];
     protected $guarded = [];
 
     public function relasi_furniture()

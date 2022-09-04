@@ -59,6 +59,7 @@
                                         <td>{{$data->gender}}</td>
                                         <td>{{$data->age_min}}</td>
                                         <td>{{$data->age_max}}</td>
+                                        <td>{{$data->deskripsi}}</td>
                                         <td>{{$data->height}}</td>
                                         <td>{{$data->weight}}</td>
                                         <td class="text-center">

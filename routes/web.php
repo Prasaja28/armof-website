@@ -3,11 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KoleksiController;
-use App\Http\Controllers\AntropometriController;
+use App\Http\Controllers\KoleksiUserController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\KategoriAdminController;
 use App\Http\Controllers\UsersController;
+use App\Models\Koleksi;
+use App\Models\Profil;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +31,14 @@ Route::get('/antropometri', function () {
     return view('users.pages.antropometri');
 });
 Route::get('/koleksi', function () {
-    return view('users.pages.koleksi');
+    $koleksi = Koleksi::all();
+    return view('users.pages.koleksi', compact('koleksi'));
 });
+
+//koleksi user
+Route::get('/koleksi', [KoleksiUserController::class, 'index']);
+Route::get('/detail/{id}', [KoleksiUserController::class, 'show']);
+
 Route::get('/rekomendasi', function () {
     return view('users.pages.rekomendasi');
 });
@@ -41,10 +49,8 @@ Route::get('/tinggi-berat', function () {
     return view('users.pages.tinggi-berat');
 });
 Route::get('/tentang-kami', function () {
-    return view('users.pages.tentang-kami');
-});
-Route::get('/detail', function () {
-    return view('users.pages.detail');
+    $tentang = Profil::all();
+    return view('users.pages.tentang-kami', compact('tentang'));
 });
 Route::get('/fungsi', function () {
     return view('users.pages.fungsi');
@@ -67,13 +73,8 @@ Route::get('/logout', [loginController::class, 'logout']);
 //Koleksi
 Route::get('/koleksi-admin', [KoleksiController::class, 'index']);
 Route::post('/koleksi-admin/store', [KoleksiController::class, 'store']);
-Route::post('/koleksi-admin/update-koleksi/{id}', [KoleksiController::class, 'update']);
+Route::put('/koleksi-admin/update-koleksi/{id}', [KoleksiController::class, 'update']);
 Route::get('/koleksi-admin/delete-koleksi/{id}', [KoleksiController::class, 'destroy']);
-
-//Antopometri
-Route::get('/antropometri-admin', [AntropometriController::class, 'index']);
-Route::post('/antropometri-admin/store', [AntropometriController::class, 'store']);
-Route::get('/antropometri-admin/delete/{id}', [AntropometriController::class, 'destroy']);
 
 //Profil
 Route::get('/admin-profil', [ProfilController::class, 'index']);

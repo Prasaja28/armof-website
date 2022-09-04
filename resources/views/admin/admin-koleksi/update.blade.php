@@ -24,10 +24,10 @@
                     </div>
                     <div class="form-group">
                         <label for="edit_furniture_id">Kategori Furniture :</label>
-                        <select class="form-control select2 select2-danger mob" id="furniture_id" name="furniture_id" data-dropdown-css-class="select2-danger">
+                        <select class="form-control select2 select2-danger mob" id="furniture_id" name="furniture_id" data-dropdown-css-class="select2-danger" value="{{ old('nama_kategori_furniture') }}">
                             <option value="{{ $data->furniture_id }}" selected disabled>{{ $data->furniture_name }}</option>
-                            @foreach ($furnitureKol as $data)
-                            <option value="{{ $data->id }}">{{ $data->nama_kategori_furniture }}</option>
+                            @foreach ($furnitureKol as $furdata)
+                            <option value="{{ $furdata->id }}">{{ $furdata->nama_kategori_furniture }}</option>
                             @endforeach
                         </select>
                         @error('furniture_id')
@@ -40,8 +40,8 @@
                         <label for="edit_fungsi_id">Kategori Fungsi :</label>
                         <select class="form-control select2 select2-danger mob" id="fungsi_id" name="fungsi_id" data-dropdown-css-class="select2-danger">
                             <option value="{{ $data->fungsi_id }}" selected disabled>{{ $data->fungsi_name }}</option>
-                            @foreach ($fungsiKol as $data)
-                            <option value=" {{ $data->id }}">{{ $data->nama_kategori_fungsi }}</option>
+                            @foreach ($fungsiKol as $fungdata)
+                            <option value=" {{ $fungdata->id }}">{{ $fungdata->nama_kategori_fungsi }}</option>
                             @endforeach
                         </select>
                         @error('fungsi_id')
