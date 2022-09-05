@@ -38,6 +38,11 @@ Route::get('/koleksi', function () {
 //koleksi user
 Route::get('/koleksi', [KoleksiUserController::class, 'index']);
 Route::get('/detail/{id}', [KoleksiUserController::class, 'show']);
+Route::get('/search', [KoleksiUserController::class, 'search'])->name('search');
+
+Route::get('/koleksi-not-found', function () {
+    return view('users.pages.koleksi-not-found');
+});
 
 Route::get('/rekomendasi', function () {
     return view('users.pages.rekomendasi');

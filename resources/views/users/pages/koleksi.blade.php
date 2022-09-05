@@ -8,10 +8,14 @@
         <div class="card-body">
           <div class="row mt-2 mb-3 mb-md-6">
             <div class="col-12 col-md-4">
-              <div class="d-flex justify-content-center align-items-center form-search">
-                <input id="search" type="text" class="form-control form-control-lg rounded-pill" placeholder="cari produk..." />
-                <i class="fas fa-search"></i>
-              </div>
+              <form class="form" method="get" action="/koleksi">
+                <div class="d-flex justify-content-center align-items-center form-search">
+                  <input id="search" type="text" class="form-control form-control-lg rounded-pill" placeholder="cari produk..." />
+                  <button type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
 
