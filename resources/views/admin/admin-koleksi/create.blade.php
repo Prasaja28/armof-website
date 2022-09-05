@@ -84,6 +84,10 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label for="edit_weight">Masukkan Deskripsi Barang :</label>
+                        <textarea class="form-control" name="content" id="koleksiEditor"></textarea>
+                    </div>
+                    <div class="form-group">
                         <label for="gender">Jenis Kelamin :</label>
                         <select class="form-control select2 select2-danger mob" id="gender" name="gender" value="{{ old('gender') }}" data-dropdown-css-class="select2-danger">
                             <option selected="selected" selected disabled>

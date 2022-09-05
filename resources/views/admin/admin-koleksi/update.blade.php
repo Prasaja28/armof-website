@@ -87,6 +87,14 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label for="edit_weight">Masukkan Deskripsi Barang :</label>
+                        <textarea class="form-control" name="content" id="koleksiUpdate">
+                              <?php
+                                echo htmlspecialchars_decode(stripslashes($data->deskripsi))
+                                ?>
+                          </textarea>
+                    </div>
+                    <div class="form-group">
                         <label for="edit_gender">Jenis Kelamin :</label>
                         <select class="form-control select2 select2-danger mob" id="gender" name="gender" data-dropdown-css-class="select2-danger">
                             <option value="{{$data->gender}}" selected disabled>

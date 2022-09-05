@@ -59,7 +59,11 @@
                                         <td>{{$data->gender}}</td>
                                         <td>{{$data->age_min}}</td>
                                         <td>{{$data->age_max}}</td>
-                                        <td>{{$data->deskripsi}}</td>
+                                        <td>
+                                            <?php
+                                            echo htmlspecialchars_decode(stripslashes($data->deskripsi))
+                                            ?>
+                                        </td>
                                         <td>{{$data->height}}</td>
                                         <td>{{$data->weight}}</td>
                                         <td class="text-center">
@@ -89,5 +93,23 @@
 
 @section('script')
 <!-- script internal place -->
+<script type="text/javascript">
+    ClassicEditor
+        .create(document.querySelector('#koleksiEditor'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
 
+    ClassicEditor
+        .create(document.querySelector('#koleksiUpdate'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 @endsection
