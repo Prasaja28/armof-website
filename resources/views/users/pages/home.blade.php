@@ -17,7 +17,7 @@
 
           <div class="row justify-content-center">
             <div class="col-8 col-md-3">
-              <a href="furniture.html" class="bg-color-primary text-uppercase text-decoration-none fw-bold text-center text-white mt-5 mb-3 m-auto d-block py-3 fs-5">mulai sekarang</a>
+              <a href="/furnitures" class="bg-color-primary text-uppercase text-decoration-none fw-bold text-center text-white mt-5 mb-3 m-auto d-block py-3 fs-5">mulai sekarang</a>
             </div>
           </div>
 
