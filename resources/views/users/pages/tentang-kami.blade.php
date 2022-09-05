@@ -27,15 +27,10 @@
           <div class="d-flex align-items-end">
             <a href="{{ getSettings('url_instagram') }}">
               <img src="assets/images/instagram.png" height="35" />
-              <h1 class="fs-5 text-color-primary ms-3">@armof.id</h1>
             </a>
+            <h1 class="fs-5 text-color-primary ms-3">@armof.id</h1>
           </div>
           @endif
-          <div class="row text-center">
-            <div class="col-12">
-              <img src="assets/images/logo.PNG" alt="armof" height="50" class="mt-5 mb-3" />
-            </div>
-          </div>
         </div>
       </div>
     </div>

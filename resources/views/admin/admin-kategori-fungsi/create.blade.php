@@ -20,6 +20,20 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label for="furniture_id">Jenis Kategori Furniture :</label>
+                        <select class="form-control dynamic" name="furniture_id" id="furniture_id" required="">
+                            <option selected="selected" selected disabled>Pilih Kategori Furniture</option>
+                            @foreach ($furnit as $data)
+                            <option value="{{ $data->id }}">{{ $data->nama_kategori_furniture }}</option>
+                            @endforeach
+                        </select>
+                        @error('furniture_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <input type="file" name="foto" class="form-control">
                     </div>
 

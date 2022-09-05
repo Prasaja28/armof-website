@@ -88,7 +88,7 @@
                     </div>
                     <div class="form-group">
                         <label for="edit_weight">Masukkan Deskripsi Barang :</label>
-                        <textarea class="form-control" name="content" id="koleksiUpdate">
+                        <textarea class="form-control" name="deskripsi" id="koleksiUpdate">
                               <?php
                                 echo htmlspecialchars_decode(stripslashes($data->deskripsi))
                                 ?>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Kategori_furniture;
 use App\Models\Kategori_fungsi;
+use Illuminate\Support\Facades\DB;
 
 class KategoriAdminController extends Controller
 {
@@ -16,8 +17,16 @@ class KategoriAdminController extends Controller
 
     public function indexFungsi()
     {
-        $fungsi = Kategori_fungsi::all();
-        return view('admin.admin-kategori-fungsi.index', compact('fungsi'));
+        $fungsi = Kategori_fungsi::select(
+            'kategori_fungsi.*',
+            'Kategori_furniture.nama_kategori_furniture as furniture_name',
+        )
+
+            ->leftjoin('Kategori_furniture', 'Kategori_fungsi.furniture_id', '=', 'Kategori_furniture.id')
+            ->get();
+
+        $furnit = DB::table('Kategori_furniture')->orderBy('nama_kategori_furniture', 'asc')->get();
+        return view('admin.admin-kategori-fungsi.index', compact('fungsi', 'furnit'));
     }
 
     public function storeFurniture(Request $request)
@@ -47,6 +56,7 @@ class KategoriAdminController extends Controller
 
         Kategori_fungsi::create([
             'nama_kategori_fungsi' => $request->nama_kategori_fungsi,
+            'furniture_id' => $request->furniture_id,
             'foto' => $path,
         ]);
         return redirect('/kategori-fungsi')->with('Data Berhasil Di Simpan!!!');
@@ -83,6 +93,7 @@ class KategoriAdminController extends Controller
         Kategori_fungsi::where('id', $id)
             ->update([
                 'nama_kategori_fungsi' => $request->nama_kategori_fungsi,
+                'furniture_id' => $request->furniture_id,
                 'foto' => $path,
             ]);
         return redirect('/kategori-fungsi')->with('Data Berhasil Di Simpan!!!');

@@ -15,9 +15,14 @@ class CreateKategoriFungsi extends Migration
     {
         Schema::create('kategori_fungsi', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('furniture_id');
             $table->string('nama_kategori_fungsi');
             $table->string('foto');
             $table->timestamps();
+            $table->foreign('furniture_id')
+                ->references('id')
+                ->on('kategori_furniture')
+                ->onUpdate('cascade')->onDelete('restrict');
         });
     }
 

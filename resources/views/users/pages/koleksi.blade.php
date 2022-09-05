@@ -25,8 +25,10 @@
             <div class="col-12 col-md-3">
               <div class="card card-furniture shadow-none border border-light border-4 mt-4 mt-md-0 rounded-9">
                 <div class="card-body d-flex justify-content-center align-items-center flex-column">
-                  @foreach(json_decode($dataKoleksi->foto) as $image)
+                  @foreach(json_decode($dataKoleksi->foto) as $key => $image)
+                  @if($key == 0)
                   <img src="{{ asset('img/koleksi-img/'.$image) }}" height="200" />
+                  @endif
                   @endforeach
                   <h4 class="text-uppercase fs-5 text-grayish">{{$dataKoleksi->nama_koleksi}}</h4>
                   <a href="{{ '/detail/'.$dataKoleksi->id }}" class="text-uppercase bg-color-primary py-1 px-5 text-decoration-none text-white fw-semibold">detail</a>

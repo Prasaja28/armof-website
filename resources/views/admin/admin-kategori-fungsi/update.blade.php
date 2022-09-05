@@ -22,6 +22,20 @@
                         </span>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label for="furniture_id">Jenis Kategori Furniture :</label>
+                        <select class="form-control dynamic" name="furniture_id" id="furniture_id" required="">
+                            <option value="{{ $data->furniture_id }}" selected disabled>{{ $data->furniture_name }}</option>
+                            @foreach ($furnit as $furdata)
+                            <option value=" {{ $furdata->id }}">{{ $furdata->nama_kategori_furniture }}</option>
+                            @endforeach
+                        </select>
+                        @error('furniture_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
                     <div class="item form-group" style="margin-right:-40px;">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align:left; margin-right: -100px;">Masukkan Foto Baru</label>
                         <div class="col-md-9 col-sm-6 col-xs-12" style="margin-left:60px;">

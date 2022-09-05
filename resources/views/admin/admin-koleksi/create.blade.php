@@ -85,7 +85,7 @@
                     </div>
                     <div class="form-group">
                         <label for="edit_weight">Masukkan Deskripsi Barang :</label>
-                        <textarea class="form-control" name="content" id="koleksiEditor"></textarea>
+                        <textarea class="form-control" name="deskripsi" id="koleksiEditor"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="gender">Jenis Kelamin :</label>

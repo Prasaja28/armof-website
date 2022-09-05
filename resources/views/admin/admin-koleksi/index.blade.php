@@ -40,6 +40,7 @@
                                         <th>Jenis Kelamin</th>
                                         <th>Umur Min</th>
                                         <th>Umur Max</th>
+                                        <th>Deskripsi</th>
                                         <th>Tinggi Badan</th>
                                         <th>Berat Badan</th>
                                         <th>Action</th>
