@@ -29,56 +29,60 @@
                             <div class="container"><br>
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#ModalCreateProfil">Tambah Data</button><br><br>
                             </div>
-                            <table id="example" class="table table-striped table-bordered" style="width:100%">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Furniture</th>
-                                        <th>Foto</th>
-                                        <th>Kategori</th>
-                                        <th>Fungsi</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>Umur Min</th>
-                                        <th>Umur Max</th>
-                                        <th>Deskripsi</th>
-                                        <th>Tinggi Badan</th>
-                                        <th>Berat Badan</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse ($koleksi as $data)
-                                    <tr>
-                                        <td>{{$loop->iteration}}</td>
-                                        <td>{{$data->nama_koleksi}}</td>
-                                        <td> @foreach (json_decode($data->foto) as $picture)
-                                            <img src="{{ asset('/img/koleksi-img/'.$picture) }}" style="height:80px; width:120px" /><br><br>
-                                            @endforeach
-                                        </td>
-                                        <td>{{$data->furniture_name}}</td>
-                                        <td>{{$data->fungsi_name}}</td>
-                                        <td>{{$data->gender}}</td>
-                                        <td>{{$data->age_min}}</td>
-                                        <td>{{$data->age_max}}</td>
-                                        <td>
-                                            <?php
-                                            echo htmlspecialchars_decode(stripslashes($data->deskripsi))
-                                            ?>
-                                        </td>
-                                        <td>{{$data->height}}</td>
-                                        <td>{{$data->weight}}</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$data->id}}"><i class="fas fa-trash-alt"></i></i></button><br><br>
-                                            <button class="btn btn-success" alt="Edit" data-toggle="modal" data-target="#edit{{$data->id}}"><i class="fas fa-pen-square"></i></button>
-                                        </td>
-                                    <tr>
-                                        @empty
-                                        <div class="alert alert-danger">
-                                            Data Koleksi belum Tersedia
-                                        </div>
-                                        @endforelse
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr style="text-align: center">
+                                            <th>No</th>
+                                            <th>Nama Furniture</th>
+                                            <th>Foto</th>
+                                            <th>Kategori</th>
+                                            <th>Fungsi</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>Umur Min</th>
+                                            <th>Umur Max</th>
+                                            <th>Url (AR)</th>
+                                            <th>Deskripsi</th>
+                                            <th>Tinggi Badan</th>
+                                            <th>Berat Badan</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse ($koleksi as $data)
+                                        <tr>
+                                            <td>{{$loop->iteration}}</td>
+                                            <td>{{$data->nama_koleksi}}</td>
+                                            <td> @foreach (json_decode($data->foto) as $picture)
+                                                <img src="{{ asset('/img/koleksi-img/'.$picture) }}" style="height:80px; width:120px;object-fit: cover;object-position: center;" /><br><br>
+                                                @endforeach
+                                            </td>
+                                            <td>{{$data->furniture_name}}</td>
+                                            <td>{{$data->fungsi_name}}</td>
+                                            <td>{{$data->gender}}</td>
+                                            <td>{{$data->age_min}}</td>
+                                            <td>{{$data->age_max}}</td>
+                                            <td>{{$data->link_ar}}</td>
+                                            <td style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 8;-webkit-box-orient: vertical;">
+                                                <?php
+                                                echo htmlspecialchars_decode(stripslashes($data->deskripsi))
+                                                ?>
+                                            </td>
+                                            <td>{{$data->height}}</td>
+                                            <td>{{$data->weight}}</td>
+                                            <td class="text-center">
+                                                <button class="btn btn-danger" alt="Hapus" data-toggle="modal" data-target="#delete{{$data->id}}"><i class="fas fa-trash-alt"></i></i></button><br><br>
+                                                <button class="btn btn-success" alt="Edit" data-toggle="modal" data-target="#edit{{$data->id}}"><i class="fas fa-pen-square"></i></button>
+                                            </td>
+                                        <tr>
+                                            @empty
+                                            <div class="alert alert-danger">
+                                                Data Koleksi belum Tersedia
+                                            </div>
+                                            @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

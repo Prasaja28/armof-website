@@ -9,9 +9,23 @@
         <div class="card-body">
           <div class="row mt-2 justify-content-center">
             <div class="col-4 d-flex justify-content-center align-items-center">
-              @foreach(json_decode($detailKoleksi->foto) as $image)
-              <img src="{{ asset('img/koleksi-img/'.$image) }}" height="250" />
-              @endforeach
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-bottom:5%;">
+                <div class="carousel-inner">
+                  @foreach(json_decode($detailKoleksi->foto) as $image)
+                  <div class="carousel-item active">
+                    <img src="{{ asset('img/koleksi-img/'.$image) }}" height="250" />
+                  </div>
+                  @endforeach
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
             </div>
           </div>
           <div class="row">
@@ -24,7 +38,7 @@
             </div>
             <div class="col-12 col-md-6 mt-3 mt-md-0">
               <div class="d-flex justify-content-end">
-                <a href="detail.html" class="text-uppercase bg-color-primary py-2 px-4 text-decoration-none text-white fw-semibold">view ar</a>
+                <a href="{{$detailKoleksi->link_ar}}" class="text-uppercase bg-color-primary py-2 px-4 text-decoration-none text-white fw-semibold">view ar</a>
                 <a href="detail.html" class="text-uppercase bg-color-primary py-2 px-4 text-decoration-none text-white fw-semibold ms-3">download</a>
               </div>
             </div>

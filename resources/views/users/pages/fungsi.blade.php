@@ -17,7 +17,7 @@
             <div class="garis garis-empat align-self-center garis-primary"></div>
             <div class="mt-3 mt-md-0 bentuk bentuk-empat bentuk-dasar empat rounded-circle ganti-model-secondary"></div>
             <div class="garis garis-lima align-self-center garis-primary"></div>
-            <a href="/usia" class="bg-color-primary text-uppercase text-decoration-none fw-bold text-center text-white py-2 px-4 rounded-pill fs-5 flex-fill ms-0 ms-md-4 mt-3 mt-md-0">selanjutnya</a>
+            <button disabled class="bg-color-primary text-uppercase text-decoration-none fw-bold text-center text-white py-2 px-4 rounded-pill fs-5 flex-fill ms-0 ms-md-4 mt-3 mt-md-0">selanjutnya</button>
           </div>
 
           <div class="row mt-5">
@@ -25,43 +25,23 @@
           </div>
 
           <div name="furnitures" class="row">
+            @foreach($fungsi as $item)
             <div class="col-12 col-md-4">
-              <a href="usia.html" class="bg-image hover-overlay">
+              <a href="{{ route('pUsia', ['fungsiid' => $item->id]) }}" class="bg-image hover-overlay">
                 <div class="card card-furniture">
                   <div class="card-body d-flex justify-content-center align-items-center">
-                    <img src="assets/images/kursi.png" height="350" />
+                    <img src="{{ asset($item->foto) }}" height="350" width="100%" style="object-fit: cover" />
                     <div class="mask" style="background: rgba(0, 0, 0, 0.1); border-radius: 7px"></div>
                   </div>
                 </div>
               </a>
-              <h1 class="fs-3 mt-3 mb-5 mb-md-0 fw-bold text-uppercase text-color-primary text-center">kursi</h1>
+              <h1 class="fs-3 mt-3 mb-5 mb-md-0 fw-bold text-uppercase text-color-primary text-center">{{ $item->nama_kategori_fungsi }}</h1>
             </div>
-            <div class="col-12 col-md-4">
-              <a href="usia.html" class="bg-image hover-overlay">
-                <div class="card card-furniture">
-                  <div class="card-body d-flex justify-content-center align-items-center">
-                    <img src="assets/images/kursi.png" height="350" />
-                    <div class="mask" style="background: rgba(0, 0, 0, 0.1); border-radius: 7px"></div>
-                  </div>
-                </div>
-              </a>
-              <h1 class="fs-3 mt-3 mb-5 mb-md-0 fw-bold text-uppercase text-color-primary text-center">kursi</h1>
-            </div>
-            <div class="col-12 col-md-4">
-              <a href="usia.html" class="bg-image hover-overlay">
-                <div class="card card-furniture">
-                  <div class="card-body d-flex justify-content-center align-items-center">
-                    <img src="assets/images/kursi.png" height="350" />
-                    <div class="mask" style="background: rgba(0, 0, 0, 0.1); border-radius: 7px"></div>
-                  </div>
-                </div>
-              </a>
-              <h1 class="fs-3 mt-3 mb-5 mb-md-0 fw-bold text-uppercase text-color-primary text-center">kursi</h1>
-            </div>
+            @endforeach
           </div>
           <div class="row text-center">
             <div class="col-12">
-              <img src="assets/images/logo.PNG" alt="armof" height="50" class="mt-5 mb-3" />
+              <img src="{{ asset('assets/images/logo.PNG') }}" alt="armof" height="50" class="mt-5 mb-3" />
             </div>
           </div>
         </div>

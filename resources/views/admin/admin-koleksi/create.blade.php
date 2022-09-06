@@ -84,6 +84,15 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label for="weight">Masukkan Link URL :</label>
+                        <input type="text" class="form-control form-control-border @error('link_ar') is-invalid @enderror" id="link_ar" placeholder="Masukkan Link AR" name="link_ar" value="{{ old('link_ar') }}" required>
+                        @error('link_ar')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label for="edit_weight">Masukkan Deskripsi Barang :</label>
                         <textarea class="form-control" name="deskripsi" id="koleksiEditor"></textarea>
                     </div>

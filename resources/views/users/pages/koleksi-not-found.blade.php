@@ -8,12 +8,14 @@
                 <div class="card-body">
                     <div class="row mt-2 mb-3 mb-md-6">
                         <div class="col-12 col-md-4">
-                            <div class="d-flex justify-content-center align-items-center form-search">
-                                <input id="search" type="text" class="form-control form-control-lg rounded-pill" placeholder="cari produk..." />
-                                <a href="/koleksi">
-                                    <i class="fas fa-search"></i>
-                                </a>
-                            </div>
+                            <form class="form" method="get" action="{{ route('search') }}">
+                                <div class="d-flex justify-content-center align-items-center form-search">
+                                    <input name="q" id="search" type="text" class="form-control form-control-lg rounded-pill" placeholder="cari produk..." />
+                                    <a href="" onClick="javascript:this.form.submit();">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </div>
+                            </form>
                         </div>
                     </div>
 

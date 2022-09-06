@@ -18,7 +18,20 @@
           <a class="nav-link text-white text-uppercase fw-bold lh-lg" href="/tentang-kami">tentang</a>
         </li>
       </ul>
-      <a href="login.html" class="bg-color-secondary text-uppercase text-decoration-none fw-bold px-5 py-2 text-white masuk">masuk</a>
+      @if(Auth::guard('customer')->check())
+      <div class="dropdown">
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          {{Auth::guard('customer')->user()->name}}
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="{{url('logout-cus')}}">Log Out</a></li>
+        </ul>
+      </div>
+      @else
+      <button class="bg-color-secondary text-uppercase text-decoration-none fw-bold px-5 py-2 text-white masuk" data-bs-toggle="modal" data-bs-target="#staticBackdrop">masuk</button>
+      @endif
     </div>
   </div>
 </nav>
+@include('users.pages.loginCustomer')
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

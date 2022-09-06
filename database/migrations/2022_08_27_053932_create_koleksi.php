@@ -23,6 +23,7 @@ class CreateKoleksi extends Migration
             $table->string('age_min', 2);
             $table->string('age_max', 2);
             $table->text('deskripsi', 10000);
+            $table->text('link_ar', 10000);
             $table->integer('height');
             $table->integer('weight');
             $table->timestamps();

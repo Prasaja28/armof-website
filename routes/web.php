@@ -1,13 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KoleksiController;
 use App\Http\Controllers\KoleksiUserController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\KategoriAdminController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\AuthUserController;
 use App\Models\Koleksi;
 use App\Models\Profil;
 
@@ -35,6 +38,12 @@ Route::get('/koleksi', function () {
     return view('users.pages.koleksi', compact('koleksi'));
 });
 
+Route::get('/loginUser', [AuthUserController::class, 'Loginindex']);
+Route::get('/regisUser', [AuthUserController::class, 'Regisindex']);
+Route::post('/do-register', [AuthUserController::class, 'doRegister']);
+Route::post('/do-login', [AuthUserController::class, 'doLogin']);
+Route::get('/logout-cus', [AuthUserController::class, 'Cuslogout']);
+
 //koleksi user
 Route::get('/koleksi', [KoleksiUserController::class, 'index']);
 Route::get('/detail/{id}', [KoleksiUserController::class, 'show']);
@@ -60,9 +69,12 @@ Route::get('/tentang-kami', function () {
 Route::get('/fungsi', function () {
     return view('users.pages.fungsi');
 });
-Route::get('/furnitures', function () {
-    return view('users.pages.furnitures');
-});
+
+Route::get('/furnitures', [FrontController::class, 'pageFurniture']);
+Route::get('/fungsi/{furnitureid}', [FrontController::class, 'pageFungsi'])->name('pFungsi');
+Route::get('/usia/{fungsiid}', [FrontController::class, 'pageUsia'])->name('pUsia');
+Route::get('/tinggi-berat', [FrontController::class, 'pageTinggiBerat'])->name('pTinggiBerat');
+Route::get('/rekomendasi', [FrontController::class, 'pageRekomendasi'])->name('pResultRekomendasi');
 
 // ADMIN ********************************************
 

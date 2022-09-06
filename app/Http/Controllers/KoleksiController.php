@@ -46,6 +46,7 @@ class KoleksiController extends Controller
             'gender' => $request->gender,
             'age_min' => $request->age_min,
             'age_max' => $request->age_max,
+            'link_ar' => $request->link_ar,
             'deskripsi' => $request->deskripsi,
             'height' => $request->height,
             'weight' => $request->weight,
@@ -62,23 +63,29 @@ class KoleksiController extends Controller
                 $image->move(public_path() . '/img/koleksi-img/', $name);
                 $data[] = $name;
             }
-        } else {
-            $data = $request->foto2;
         }
 
-        Koleksi::where('id', $id)
-            ->update([
-                'nama_koleksi' => $request->nama_koleksi,
-                'furniture_id' => $request->furniture_id,
-                'fungsi_id' => $request->fungsi_id,
-                'foto' => json_encode($data),
-                'gender' => $request->gender,
-                'age_min' => $request->age_min,
-                'age_max' => $request->age_max,
-                'deskripsi' => $request->deskripsi,
-                'height' => $request->height,
-                'weight' => $request->weight,
-            ]);
+        $update = [
+            'nama_koleksi' => $request->nama_koleksi,
+            'furniture_id' => $request->furniture_id,
+            'fungsi_id' => $request->fungsi_id,
+            'gender' => $request->gender,
+            'age_min' => $request->age_min,
+            'age_max' => $request->age_max,
+            'deskripsi' => $request->deskripsi,
+            'height' => $request->height,
+            'weight' => $request->weight,
+        ];
+
+        if (sizeof($data) < 1) {
+            Koleksi::where('id', $id)
+                ->update($update);
+        } else {
+            $update = array_merge($update, ['foto' => json_encode($data)]);
+            Koleksi::where('id', $id)
+                ->update($update);
+        }
+
         return redirect('/koleksi-admin')->with('Data Berhasil Di di update!!!');
     }
 

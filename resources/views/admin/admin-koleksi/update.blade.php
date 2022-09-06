@@ -25,9 +25,12 @@
                     <div class="form-group">
                         <label for="edit_furniture_id">Kategori Furniture :</label>
                         <select class="form-control select2 select2-danger mob" id="furniture_id" name="furniture_id" data-dropdown-css-class="select2-danger" value="{{ old('nama_kategori_furniture') }}">
-                            <option value="{{ $data->furniture_id }}" selected disabled>{{ $data->furniture_name }}</option>
                             @foreach ($furnitureKol as $furdata)
+                            @if ($furdata->id == $data->furniture_id)
+                            <option value="{{ $furdata->id }}" selected>{{ $furdata->nama_kategori_furniture }}</option>
+                            @else
                             <option value="{{ $furdata->id }}">{{ $furdata->nama_kategori_furniture }}</option>
+                            @endif
                             @endforeach
                         </select>
                         @error('furniture_id')
@@ -39,9 +42,12 @@
                     <div class="form-group">
                         <label for="edit_fungsi_id">Kategori Fungsi :</label>
                         <select class="form-control select2 select2-danger mob" id="fungsi_id" name="fungsi_id" data-dropdown-css-class="select2-danger">
-                            <option value="{{ $data->fungsi_id }}" selected disabled>{{ $data->fungsi_name }}</option>
                             @foreach ($fungsiKol as $fungdata)
+                            @if ($fungdata->id == $data->fungsi_id)
+                            <option value=" {{ $fungdata->id }}" selected>{{ $fungdata->nama_kategori_fungsi }}</option>
+                            @else
                             <option value=" {{ $fungdata->id }}">{{ $fungdata->nama_kategori_fungsi }}</option>
+                            @endif
                             @endforeach
                         </select>
                         @error('fungsi_id')
@@ -87,12 +93,21 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label for="edit_weight">Masukkan Link URL :</label>
+                        <input type="text" class="form-control form-control-border @error('link_ar') is-invalid @enderror" id="link_ar" placeholder="Masukkan Link AR" name="link_ar" value="{{$data->link_ar}}" required>
+                        @error('link_ar')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label for="edit_weight">Masukkan Deskripsi Barang :</label>
                         <textarea class="form-control" name="deskripsi" id="koleksiUpdate">
-                              <?php
-                                echo htmlspecialchars_decode(stripslashes($data->deskripsi))
-                                ?>
-                          </textarea>
+                            <?php
+                            echo htmlspecialchars_decode(stripslashes($data->deskripsi))
+                            ?>
+                        </textarea>
                     </div>
                     <div class="form-group">
                         <label for="edit_gender">Jenis Kelamin :</label>
@@ -100,12 +115,12 @@
                             <option value="{{$data->gender}}" selected disabled>
                                 {{$data->gender}}
                             </option>
-                            @if (old('gender') == 'Laki-Laki')
+                            @if ($data->gender) == 'Laki-Laki')
                             <option selected value="Laki-Laki">Laki-Laki
                             </option>
                             <option value="Perempuan">Perempuan
                             </option>
-                            @elseif(old('gender') == 'Perempuan')
+                            @elseif($data->gender) == 'Perempuan')
                             <option value="Laki-Laki">Laki-Laki</option>
                             <option selected value="Perempuan">
                                 Perempuan
