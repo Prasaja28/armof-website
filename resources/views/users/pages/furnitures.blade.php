@@ -7,7 +7,7 @@
       <div class="card mt-4 py-3 px-3 px-md-5">
         <div class="card-body">
           <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
-            <a href="home.html" class="bg-color-primary text-uppercase text-decoration-none fw-bold text-center text-white py-2 px-4 rounded-pill fs-5 flex-fill me-0 me-md-4">sebelumnya</a>
+            <a href="/" class="bg-color-primary text-uppercase text-decoration-none fw-bold text-center text-white py-2 px-4 rounded-pill fs-5 flex-fill me-0 me-md-4">sebelumnya</a>
             <div class="garis garis-satu align-self-center garis-secondary"></div>
             <div class="bentuk bentuk-satu bentuk-dasar satu rounded-circle ganti-model-primary"></div>
 
