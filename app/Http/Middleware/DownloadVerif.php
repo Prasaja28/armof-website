@@ -18,9 +18,10 @@ class DownloadVerif
      * @param  int  $id
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, $id, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
-        $detailKoleksi = Koleksi::findorfail($id);
+        $id = $request->id;
+        $detailKoleksi = Koleksi::where('id', $id)->get();
         if (Auth::guard('customer')->check()) {
             return redirect()->route('downloadPDF', $detailKoleksi->id);
         } else {

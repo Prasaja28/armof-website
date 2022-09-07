@@ -12,6 +12,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AuthUserController;
 use App\Http\Middleware\DownloadVerif;
+use App\Http\Middleware\Authenticate;
 use App\Models\Koleksi;
 use App\Models\Profil;
 
@@ -46,10 +47,10 @@ Route::post('/do-login', [AuthUserController::class, 'doLogin']);
 Route::get('/logout-cus', [AuthUserController::class, 'Cuslogout']);
 
 //koleksi user
-Route::get('/koleksi', [KoleksiUserController::class, 'index']);
+Route::get('/koleksi', [KoleksiUserController::class, 'index'])->name('koleksi');
 Route::get('/detail/{id}', [KoleksiUserController::class, 'show']);
 Route::get('/search', [KoleksiUserController::class, 'search'])->name('search');
-Route::get('/detail/{id}/downloadPDF', [KoleksiUserController::class, 'downloadPDF'])->name('downloadPDF')->middleware(DownloadVerif::class);
+Route::get('/detail/{id}/downloadPDF', [KoleksiUserController::class, 'downloadPDF'])->name('downloadPDF')->middleware('auth:customer');
 
 Route::get('/koleksi-not-found', function () {
     return view('users.pages.koleksi-not-found');
