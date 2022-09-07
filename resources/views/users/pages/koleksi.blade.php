@@ -38,47 +38,9 @@
             @endforeach
             @endif
           </div>
-          <!-- <div name="furnitures" class="row mt-0 mt-5">
-            <div class="col-12 col-md-3">
-              <div class="card card-furniture shadow-none border border-light border-4 mt-4 mt-md-0 rounded-9">
-                <div class="card-body d-flex justify-content-center align-items-center flex-column">
-                  <img src="assets/images/kursi.png" height="200" />
-                  <h4 class="text-uppercase fs-5 text-grayish">kursi</h4>
-                  <a href="detail.html" class="text-uppercase bg-color-primary py-1 px-5 text-decoration-none text-white fw-semibold">detail</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-3">
-              <div class="card card-furniture shadow-none border border-light border-4 mt-4 mt-md-0 rounded-9">
-                <div class="card-body d-flex justify-content-center align-items-center flex-column">
-                  <img src="assets/images/kursi.png" height="200" />
-                  <h4 class="text-uppercase fs-5 text-grayish">kursi</h4>
-                  <a href="detail.html" class="text-uppercase bg-color-primary py-1 px-5 text-decoration-none text-white fw-semibold">detail</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-3">
-              <div class="card card-furniture shadow-none border border-light border-4 mt-4 mt-md-0 rounded-9">
-                <div class="card-body d-flex justify-content-center align-items-center flex-column">
-                  <img src="assets/images/kursi.png" height="200" />
-                  <h4 class="text-uppercase fs-5 text-grayish">kursi</h4>
-                  <a href="detail.html" class="text-uppercase bg-color-primary py-1 px-5 text-decoration-none text-white fw-semibold">detail</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-3">
-              <div class="card card-furniture shadow-none border border-light border-4 mt-4 mt-md-0 rounded-9">
-                <div class="card-body d-flex justify-content-center align-items-center flex-column">
-                  <img src="assets/images/kursi.png" height="200" />
-                  <h4 class="text-uppercase fs-5 text-grayish">kursi</h4>
-                  <a href="detail.html" class="text-uppercase bg-color-primary py-1 px-5 text-decoration-none text-white fw-semibold">detail</a>
-                </div>
-              </div>
-            </div>
-          </div> -->
           <div class="row text-center">
             <div class="col-12">
-              <img src="assets/images/logo.PNG" alt="armof" height="50" class="mt-5 mb-3" />
+              <img src="{{ asset('assets/images/logo.png') }}" alt="armof" height="50" class="mt-5 mb-3" />
             </div>
           </div>
         </div>
