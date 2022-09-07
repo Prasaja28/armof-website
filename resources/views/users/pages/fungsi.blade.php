@@ -41,7 +41,7 @@
           </div>
           <div class="row text-center">
             <div class="col-12">
-              <img src="{{ asset('assets/images/logo.PNG') }}" alt="armof" height="50" class="mt-5 mb-3" />
+              <img src="{{ asset('assets/images/logo.png') }}" alt="armof" height="50" class="mt-5 mb-3" />
             </div>
           </div>
         </div>
