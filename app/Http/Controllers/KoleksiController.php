@@ -15,7 +15,6 @@ class KoleksiController extends Controller
             'koleksi.*',
             'Kategori_furniture.nama_kategori_furniture as furniture_name',
             'Kategori_fungsi.nama_kategori_fungsi as fungsi_name',
-            'Kategori_furniture.id as furniture_id',
         )
 
             ->leftjoin('Kategori_furniture', 'koleksi.furniture_id', '=', 'Kategori_furniture.id')
