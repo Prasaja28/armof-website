@@ -10,16 +10,13 @@
           @if ($tentang->count() != 0)
           @foreach ($tentang as $dataTentang)
           <p class="fs-4">
-            <!-- ARMOF atau kepanjangan dari Augmented Reality Modelling Of Furniture yaitu aplikasi berbasis website yang dirilis pada tahun 2022. Seperti namanya, ARMOF bergerak dibidang model mebel yang digabungkan dengan AR (Augmented
-              Reality). ARMOF dirancang oleh 5 mahasiswa dari Universitas Negeri Manado. <br /><br />
-              ARMOF adalah aplikasi berbasis web terbuka yang bisa diakses oleh semua pengguna, memudahkan pengguna melihat rekomendasi mebel yang digunakan sesuai kebutuhannya dengan menggunakan perhitungan antropometri 36 dimensi. -->
             {{$dataTentang->deskripsi}}
           </p>
           @endforeach
           @endif
 
           <div class="logo-tentang d-flex justify-content-center">
-            <img src="{{ asset('assets/images/logo.PNG') }}" />
+            <img src="{{ asset('assets/images/logo.png') }}" />
           </div>
 
           <p class="fs-5 text-color-primary mt-5">Informasi lebih lanjut:</p>

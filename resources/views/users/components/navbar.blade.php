@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg pt-0 pt-md-5 shadow-none">
   <div class="container">
     <a class="navbar-brand me-0 me-md-5" href="/">
-      <img src="{{ asset('assets/images/logo.PNG') }}" alt="armof" class="logo-header" />
+      <img src="{{ asset('assets/images/logo.png') }}" alt="armof" class="logo-header" />
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
