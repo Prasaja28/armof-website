@@ -58,8 +58,8 @@ class FrontController extends Controller
             $query->where('furniture_id', '=',  $kondisi['furnitureId'])
                 ->where('fungsi_id', '=', $kondisi['fungsiId'])
                 ->where('gender', '=', $kondisi['gender'])
-                ->where('age_min', '>=', $kondisi['usia'])
-                ->where('age_max', '<=', $kondisi['usia'])
+                ->where('age_min', '<=', $kondisi['usia'])
+                ->where('age_max', '>=', $kondisi['usia'])
                 ->where('height', '>=', $kondisi['tinggi'])
                 ->where('weight', '>=', $kondisi['berat']);
         })

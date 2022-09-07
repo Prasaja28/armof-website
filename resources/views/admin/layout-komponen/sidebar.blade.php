@@ -24,6 +24,9 @@
                     <li class="nav-item {{ (request()->is('setting-socialmedia*')) ? 'active' : '' }}">
                         <a class="nav-link" href="/setting-socialmedia"><i class="fas fa-link"></i>Setting URL Sosmed</a>
                     </li>
+                    <li class="nav-item {{ (request()->is('customer-admin*')) ? 'active' : '' }}">
+                        <a class="nav-link" href="/customer-admin"><i class="fas fas fa-user"></i>Customer</a>
+                    </li>
                     <li class="nav-item {{ (request()->is('admin-akun*')) ? 'active' : '' }}">
                         <a class="nav-link" href="/admin-akun"><i class="fas fas fa-user"></i>Akun Admin</a>
                     </li>

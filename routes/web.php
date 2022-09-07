@@ -90,6 +90,9 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/logout', [loginController::class, 'logout']);
 
+//Customer
+Route::get('/customer-admin', [AuthUserController::class, 'Customerindex']);
+
 //Koleksi
 Route::get('/koleksi-admin', [KoleksiController::class, 'index']);
 Route::post('/koleksi-admin/store', [KoleksiController::class, 'store']);

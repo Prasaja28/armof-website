@@ -17,6 +17,12 @@ class AuthUserController extends Controller
         return view('/users/pages/loginCustomer', compact('customer'));
     }
 
+    public function Customerindex()
+    {
+        $customer = Customer::all();
+        return view('/admin/admin-customer/index', compact('customer'));
+    }
+
     public function Regisindex()
     {
         $customer = Customer::all();
