@@ -19,7 +19,7 @@
           @endif
 
           <div class="logo-tentang d-flex justify-content-center">
-            <img src="assets/images/logo.PNG" />
+            <img src="{{ asset('assets/images/logo.PNG') }}" />
           </div>
 
           <p class="fs-5 text-color-primary mt-5">Informasi lebih lanjut:</p>
