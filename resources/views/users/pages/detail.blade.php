@@ -39,7 +39,7 @@
             <div class="col-12 col-md-6 mt-3 mt-md-0">
               <div class="d-flex justify-content-end">
                 <a href="{{$detailKoleksi->link_ar}}" class="text-uppercase bg-color-primary py-2 px-4 text-decoration-none text-white fw-semibold">view ar</a>
-                <a href="detail.html" class="text-uppercase bg-color-primary py-2 px-4 text-decoration-none text-white fw-semibold ms-3">download</a>
+                <a href="{{route('downloadPDF', $detailKoleksi->id)}}" class="text-uppercase bg-color-primary py-2 px-4 text-decoration-none text-white fw-semibold ms-3">download</a>
               </div>
             </div>
           </div>

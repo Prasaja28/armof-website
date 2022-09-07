@@ -11,6 +11,7 @@ use App\Http\Controllers\KategoriAdminController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AuthUserController;
+use App\Http\Middleware\DownloadVerif;
 use App\Models\Koleksi;
 use App\Models\Profil;
 
@@ -48,6 +49,7 @@ Route::get('/logout-cus', [AuthUserController::class, 'Cuslogout']);
 Route::get('/koleksi', [KoleksiUserController::class, 'index']);
 Route::get('/detail/{id}', [KoleksiUserController::class, 'show']);
 Route::get('/search', [KoleksiUserController::class, 'search'])->name('search');
+Route::get('/detail/{id}/downloadPDF', [KoleksiUserController::class, 'downloadPDF'])->name('downloadPDF')->middleware(DownloadVerif::class);
 
 Route::get('/koleksi-not-found', function () {
     return view('users.pages.koleksi-not-found');

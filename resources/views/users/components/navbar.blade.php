@@ -20,7 +20,7 @@
       </ul>
       @if(Auth::guard('customer')->check())
       <div class="dropdown">
-        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="bg-color-secondary text-decoration-none fw-bold px-5 py-2 text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
           {{Auth::guard('customer')->user()->name}}
         </a>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
