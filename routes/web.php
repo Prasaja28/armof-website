@@ -115,8 +115,8 @@ Route::get('/kategori-furniture', [KategoriAdminController::class, 'indexFurnitu
 Route::get('/kategori-fungsi', [KategoriAdminController::class, 'indexFungsi']);
 Route::post('/kategori-furniture/store', [KategoriAdminController::class, 'storeFurniture']);
 Route::post('/kategori-fungsi/store', [KategoriAdminController::class, 'storeFungsi']);
-Route::post('/kategori-furniture/update/{id}', [KategoriAdminController::class, 'updateFurniture']);
-Route::post('/kategori-fungsi/update/{id}', [KategoriAdminController::class, 'updateFungsi']);
+Route::put('/kategori-furniture/update/{id}', [KategoriAdminController::class, 'updateFurniture']);
+Route::put('/kategori-fungsi/update/{id}', [KategoriAdminController::class, 'updateFungsi']);
 Route::get('/kategori-furniture/delete/{id}', [KategoriAdminController::class, 'destroyFurniture']);
 Route::get('/kategori-fungsi/delete/{id}', [KategoriAdminController::class, 'destroyFungsi']);
 

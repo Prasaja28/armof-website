@@ -25,9 +25,12 @@
                     <div class="form-group">
                         <label for="furniture_id">Jenis Kategori Furniture :</label>
                         <select class="form-control dynamic" name="furniture_id" id="furniture_id" required="">
-                            <option value="{{ $data->furniture_id }}" selected disabled>{{ $data->furniture_name }}</option>
                             @foreach ($furnit as $furdata)
-                            <option value=" {{ $furdata->id }}">{{ $furdata->nama_kategori_furniture }}</option>
+                            @if ($furdata->id == $data->furniture_id)
+                            <option value="{{ $furdata->id }}" selected>{{ $furdata->nama_kategori_furniture }}</option>
+                            @else
+                            <option value="{{ $furdata->id }}">{{ $furdata->nama_kategori_furniture }}</option>
+                            @endif
                             @endforeach
                         </select>
                         @error('furniture_id')
