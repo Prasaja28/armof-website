@@ -71,6 +71,7 @@ class KoleksiController extends Controller
             'gender' => $request->gender,
             'age_min' => $request->age_min,
             'age_max' => $request->age_max,
+            'link_ar' => $request->link_ar,
             'deskripsi' => $request->deskripsi,
             'height' => $request->height,
             'weight' => $request->weight,
