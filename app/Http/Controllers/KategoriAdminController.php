@@ -19,13 +19,13 @@ class KategoriAdminController extends Controller
     {
         $fungsi = Kategori_fungsi::select(
             'kategori_fungsi.*',
-            'Kategori_furniture.nama_kategori_furniture as furniture_name',
+            'kategori_furniture.nama_kategori_furniture as furniture_name',
         )
 
-            ->leftjoin('Kategori_furniture', 'Kategori_fungsi.furniture_id', '=', 'Kategori_furniture.id')
+            ->leftjoin('kategori_furniture', 'kategori_fungsi.furniture_id', '=', 'kategori_furniture.id')
             ->get();
 
-        $furnit = DB::table('Kategori_furniture')->orderBy('nama_kategori_furniture', 'asc')->get();
+        $furnit = DB::table('kategori_furniture')->orderBy('nama_kategori_furniture', 'asc')->get();
         return view('admin.admin-kategori-fungsi.index', compact('fungsi', 'furnit'));
     }
 
