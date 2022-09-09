@@ -7,7 +7,7 @@
       <div class="card mt-4 py-3 px-3 px-md-5">
         <div class="card-body">
           <div class="d-flex flex-column flex-md-row justify-content-center align-items-center">
-            <a href="/fungsi" class="bg-color-primary text-uppercase text-decoration-none fw-bold text-center text-white py-2 px-4 rounded-pill fs-5 flex-fill me-0 me-md-4">sebelumnya</a>
+            <a href="/furnitures" class="bg-color-primary text-uppercase text-decoration-none fw-bold text-center text-white py-2 px-4 rounded-pill fs-5 flex-fill me-0 me-md-4">sebelumnya</a>
             <div class="garis garis-satu align-self-center garis-secondary"></div>
             <div class="bentuk bentuk-satu bentuk-dasar satu rounded-circle ganti-model-primary"></div>
             <div class="garis garis-dua align-self-center garis-secondary"></div>
@@ -37,8 +37,8 @@
                 <label class="text-uppercase text-color-primary mb-3 fw-semibold mt-4 mt-md-0">jenis kelamin</label>
                 <select name="gender" class="form-select">
                   <option selected disabled>Pilih jenis kelamin</option>
-                  <option value="0">laki - laki</option>
-                  <option value="1">perempuan</option>
+                  <option value="Laki-Laki">laki - laki</option>
+                  <option value="Perempuan">perempuan</option>
                 </select>
               </div>
               <div class="col-12 col-md-3">

@@ -60,10 +60,11 @@ class FrontController extends Controller
                 ->where('gender', '=', $kondisi['gender'])
                 ->where('age_min', '<=', $kondisi['usia'])
                 ->where('age_max', '>=', $kondisi['usia'])
-                ->where('height', '>=', $kondisi['tinggi'])
-                ->where('weight', '>=', $kondisi['berat']);
+                ->where('height', '=', $kondisi['tinggi'])
+                ->where('weight', '=', $kondisi['berat']);
         })
             ->get();
+        // dd($kondisi);
         return view('users.pages.rekomendasi', ['result' => $koleksi]);
     }
 }

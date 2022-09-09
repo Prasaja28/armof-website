@@ -72,7 +72,6 @@ Route::get('/tentang-kami', function () {
 Route::get('/fungsi', function () {
     return view('users.pages.fungsi');
 });
-// Route::get('/fungsi', [KategoriAdminController::class, 'indexFungsiuser']);
 
 Route::get('/furnitures', [FrontController::class, 'pageFurniture']);
 Route::get('/fungsi/{furnitureid}', [FrontController::class, 'pageFungsi'])->name('pFungsi');

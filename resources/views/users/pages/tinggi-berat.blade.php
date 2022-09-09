@@ -41,9 +41,9 @@
                 </div>
               </div>
               <div class="col-12 col-md-4">
-                <label class="text-uppercase text-color-primary fw-bold mt-3 mt-md-0">tinggi</label>
+                <label class="text-uppercase text-color-primary fw-bold mt-3 mt-md-0">tinggi (cm)</label>
                 <input name="tinggi" type="number" class="form-control" min="1" required />
-                <label class="text-uppercase text-color-primary fw-bold mt-3 mt-md-3">berat</label>
+                <label class="text-uppercase text-color-primary fw-bold mt-3 mt-md-3">berat (kg)</label>
                 <input name="berat" type="number" class="form-control" min="1" required />
               </div>
             </div>

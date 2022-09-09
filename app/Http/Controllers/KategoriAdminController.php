@@ -34,7 +34,7 @@ class KategoriAdminController extends Controller
         $path = null;
         if ($request->foto) {
             $file = $request->file('foto');
-            $path = '/img/kategori-furniture-img/' . time() . '-' . $file->getClientOriginalName();
+            $path = __DIR__ . '/img/kategori-furniture-img/' . time() . '-' . $file->getClientOriginalName();
             $file->move(public_path('img/kategori-furniture-img'), $path);
         }
 
