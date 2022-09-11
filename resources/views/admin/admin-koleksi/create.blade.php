@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <form action="{{ url('/koleksi-admin/store') }}" method="post" enctype="multipart/form-data">
-                    @csrf
+                    {{csrf_field()}}
                     <div class="form-group">
                         <label for="nama_koleksi">Nama Furniture :</label>
                         <input type="text" class="form-control form-control-border @error('nama_koleksi') is-invalid @enderror" id="nama_koleksi" placeholder="Masukkan Nama Koleksi" name="nama_koleksi" value="{{ old('nama_koleksi') }}" required>
