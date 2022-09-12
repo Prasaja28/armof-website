@@ -55,10 +55,6 @@ Route::get('/detail/{id}/downloadPDF', [KoleksiUserController::class, 'downloadP
 Route::get('/koleksi-not-found', function () {
     return view('users.pages.koleksi-not-found');
 });
-
-Route::get('/rekomendasi', function () {
-    return view('users.pages.rekomendasi');
-});
 Route::get('/usia', function () {
     return view('users.pages.usia');
 });

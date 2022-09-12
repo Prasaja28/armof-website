@@ -64,7 +64,6 @@ class FrontController extends Controller
                 ->where('weight', '=', $kondisi['berat']);
         })
             ->get();
-        // dd($kondisi);
         return view('users.pages.rekomendasi', ['result' => $koleksi]);
     }
 }

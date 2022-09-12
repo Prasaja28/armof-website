@@ -20,7 +20,7 @@
                   @endif
                   @endforeach
                   <h4 class="text-uppercase fs-5 text-grayish">{{ $item->nama_koleksi }}</h4>
-                  <a href="detail.html" class="text-uppercase bg-color-primary py-1 px-5 text-decoration-none text-white fw-semibold">detail</a>
+                  <a href="{{ '/detail/'.$item->id }}" class="text-uppercase bg-color-primary py-1 px-5 text-decoration-none text-white fw-semibold">detail</a>
                 </div>
               </div>
           </div>
