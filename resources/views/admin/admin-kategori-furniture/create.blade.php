@@ -20,7 +20,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <input type="file" name="foto" class="form-control">
+                        <input type="file" name="foto_furniture" class="form-control">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Simpan</button>

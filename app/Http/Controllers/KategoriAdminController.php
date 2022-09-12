@@ -32,8 +32,8 @@ class KategoriAdminController extends Controller
     public function storeFurniture(Request $request)
     {
         $path = null;
-        if ($request->foto) {
-            $file = $request->file('foto');
+        if ($request->foto_furniture) {
+            $file = $request->file('foto_furniture');
             $path = '/img/kategori-furniture-img/' . time() . '-' . $file->getClientOriginalName();
             $file->move(public_path('img/kategori-furniture-img'), $path);
         }
