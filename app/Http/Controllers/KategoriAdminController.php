@@ -112,7 +112,9 @@ class KategoriAdminController extends Controller
     {
         $data = Kategori_fungsi::find($id);
         $image_path = public_path() .  $data->foto;
-        unlink($image_path);
+        if (is_file($image_path)) {
+            unlink($image_path);
+        }
         $data->delete();
         return redirect('/kategori-fungsi');
     }

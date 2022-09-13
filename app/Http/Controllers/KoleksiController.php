@@ -93,7 +93,9 @@ class KoleksiController extends Controller
     {
         $data = Koleksi::find($id);
         $image_path = public_path() .  $data->foto;
-        unlink($image_path);
+        if (is_file($image_path)) {
+            unlink($image_path);
+        }
         $data->delete();
         return redirect('/koleksi-admin');
     }
